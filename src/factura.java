@@ -2,7 +2,7 @@ public class factura {
     private float precioTotal;
 
     public factura() {
-        this.precioTotal = precioTotal;
+        this.precioTotal = 0;
     }
 
     public float getPrecioTotal() {
@@ -20,6 +20,7 @@ public class factura {
     }
 
     float facturacion(float pago) {
+        //assert pago>precioTotal;
         return pago - precioTotal;
     }
 }

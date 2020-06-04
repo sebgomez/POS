@@ -7,6 +7,10 @@ public class producto {
     private Date fechaVencimiento;
 
     public producto() {
+        id=0;
+        nombre="";
+        precio=0L;
+        fechaVencimiento=new Date();
     }
 
     public producto(int id, String nombre, float precio, Date fechaVencimiento) {

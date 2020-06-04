@@ -32,17 +32,17 @@ public class inventario {
         this.cantidades = cantidades;
     }
 
-    void agregarProducto(producto p) {
+    static void agregarProducto(producto p) {
         if (cantidades.get(p.getId()) == null) {
             productos.add(p);
             cantidades.put(p.getId(), 1);
         } else {
             int cantidadPrevia = cantidades.get(p.getId());
-            cantidades.put(p.getId(), cantidadPrevia++);
+            cantidades.put(p.getId(), cantidadPrevia+1);
         }
     }
 
-    void agregarProducto(producto p, int cantidad) {
+    static void agregarProducto(producto p, int cantidad) {
         if (cantidades.get(p.getId()) == null) {
             productos.add(p);
             cantidades.put(p.getId(), cantidad);
@@ -63,9 +63,9 @@ public class inventario {
     }
 
     static producto buscarProducto(int pid) {
-        for (int i = 0; i < productos.size(); i++) {
-            if (productos.get(i).getId() == pid) {
-                return productos.get(i);
+        for (producto producto : productos) {
+            if (producto.getId() == pid) {
+                return producto;
             }
         }
         return null;
